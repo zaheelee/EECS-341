@@ -37,11 +37,31 @@ CREATE TABLE Archenemies(hero_name VARCHAR(24) NOT NULL,
 INSERT INTO Team
 	VALUES('Justice League', NULL, 'DC');
 
+INSERT INTO Team
+	VALUES('Avengers', NULL, 'Marvel');
+	
+INSERT INTO Team
+	VALUES('Teen Titans', 'New York City', 'DC');
+	
+INSERT INTO Team
+	Values('Young Avengers', 'New York City', 'Marvel');
+	
+INSERT INTO Team
+	Values('Fantastic Four', 'New York City', 'Marvel');
+
+SELECT *
+FROM Team;
+
+
 INSERT INTO Superhero
 	VALUES('Superman', 'Clark Kent', 'DC', 'Metropolis', NULL, 'Justice League', 1938, 'Kryptonite', TRUE, FALSE);
+	
+INSERT INTO Superhero
+	VALUES('Robin', 'Dick Grayson', 'DC', 'Gotham City', NULL, 'Teen Titans', 1940, 'Everything', TRUE, FALSE);
+	
+INSERT INTO Superhero
+	VALUES('Batman', 'Bruce Wayne', 'DC', 'Gotham City', 'Robin', 'Justice League', 1938, 'Everything', TRUE, FALSE);
 	
 SELECT *
 FROM Superhero;
 
-SELECT *
-FROM Team;
