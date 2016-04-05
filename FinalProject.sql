@@ -23,7 +23,6 @@ CREATE TABLE Superhero(name VARCHAR(24) NOT NULL,
 				
 CREATE TABLE HasPower(power_name VARCHAR(24) NOT NULL,
 						name VARCHAR(24) NOT NULL,
-				PRIMARY KEY(power_name),
 				FOREIGN KEY(name) REFERENCES Superhero(name),
 				FOREIGN KEY(power_name) REFERENCES Power(name));
 				
@@ -62,6 +61,38 @@ INSERT INTO Superhero
 INSERT INTO Superhero
 	VALUES('Batman', 'Bruce Wayne', 'DC', 'Gotham City', 'Robin', 'Justice League', 1938, 'Everything', TRUE, FALSE);
 	
+INSERT INTO Superhero
+	VALUES('Iron Man', 'Tony Stark', 'Marvel', NULL, NULL, 'Avengers', 1963, 'Dead Batteries', TRUE, FALSE);
+	
 SELECT *
 FROM Superhero;
 
+
+INSERT INTO Power
+	VALUES('Money', 'Rich Parents');
+	
+INSERT INTO Power
+	VALUES('Flight', 'Genetics');
+	
+INSERT INTO Power
+	VALUES('Heat Vision', 'Genetics');
+	
+SELECT *
+FROM Power;
+
+
+INSERT INTO HasPower
+	VALUES('Money', 'Batman');
+	
+INSERT INTO HasPower
+	VALUES('Flight', 'Superman');
+	
+INSERT INTO HasPower
+	VALUES('Heat Vision', 'Superman');
+	
+INSERT INTO HasPower
+	VALUES('Money', 'Iron Man');
+	
+SELECT *
+FROM HasPower;
+	
