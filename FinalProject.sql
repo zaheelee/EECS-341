@@ -26,9 +26,8 @@ CREATE TABLE HasPower(power_name VARCHAR(24) NOT NULL,
 				FOREIGN KEY(name) REFERENCES Superhero(name),
 				FOREIGN KEY(power_name) REFERENCES Power(name));
 				
-CREATE TABLE Archenemies(hero_name VARCHAR(24) NOT NULL,
+CREATE TABLE Archenemies(hero_name VARCHAR(24),
 							villain_name VARCHAR(24) NOT NULL,
-					PRIMARY KEY(hero_name),
 					FOREIGN KEY(hero_name) REFERENCES Superhero(name),
 					FOREIGN KEY(villain_name) REFERENCES Superhero(name));
 				
@@ -47,6 +46,9 @@ INSERT INTO Team
 	
 INSERT INTO Team
 	Values('Fantastic Four', 'New York City', 'Marvel');
+	
+INSERT INTO Team
+	Values('Suicide Squad', NULL, 'DC');
 
 SELECT *
 FROM Team;
@@ -64,6 +66,18 @@ INSERT INTO Superhero
 INSERT INTO Superhero
 	VALUES('Iron Man', 'Tony Stark', 'Marvel', NULL, NULL, 'Avengers', 1963, 'Dead Batteries', TRUE, FALSE);
 	
+INSERT INTO Superhero
+	VALUES('Harley Quinn', 'Harleen Quinzel', 'DC', 'Gotham City', NULL, 'Suicide Squad', 1993, 'Everything', TRUE, TRUE);
+	
+INSERT INTO Superhero
+	VALUES('Joker', 'Unknown', 'DC', 'Gotham City', 'Harley Quinn', NULL, 1940, 'Everything', TRUE, TRUE);
+	
+INSERT INTO Superhero
+	VALUES('Wiccan', 'Billy Kaplan', 'Marvel', 'New York City', NULL, 'Young Avengers', 2005, 'Overuse of Magic', TRUE, FALSE);
+	
+INSERT INTO Superhero
+	VALUES('Hulkling', 'Teddy Altman', 'Marvel', 'New York City', NULL, 'Young Avengers', 2005, 'Fire', TRUE, FALSE);
+	
 SELECT *
 FROM Superhero;
 
@@ -76,6 +90,9 @@ INSERT INTO Power
 	
 INSERT INTO Power
 	VALUES('Heat Vision', 'Genetics');
+	
+INSERT INTO Power
+	VALUES('Insanity', 'Vat of Acid');
 	
 SELECT *
 FROM Power;
@@ -93,6 +110,21 @@ INSERT INTO HasPower
 INSERT INTO HasPower
 	VALUES('Money', 'Iron Man');
 	
+INSERT INTO HasPower
+	VALUES('Insanity', 'Joker');
+	
+INSERT INTO HasPower
+	VALUES('Insanity', 'Harley Quinn');
+	
 SELECT *
 FROM HasPower;
 	
+	
+INSERT INTO Archenemies
+	VALUES('Batman', 'Joker');
+	
+INSERT INTO Archenemies
+	VALUES('Batman', 'Harley Quinn');
+	
+SELECT *
+FROM Archenemies;
