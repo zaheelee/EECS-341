@@ -77,6 +77,12 @@ INSERT INTO Superhero
 	
 INSERT INTO Superhero
 	VALUES('Hulkling', 'Teddy Altman', 'Marvel', 'New York City', NULL, 'Young Avengers', 2005, 'Fire', TRUE, FALSE);
+
+INSERT INTO Superhero
+	VALUES('Doomsday', NULL, 'DC', 'Metropolis', NULL, NULL, 1992, 'Kryptonite', FALSE, TRUE);
+	
+INSERT INTO Superhero
+	VALUES('Lex Luthor', 'Lex Luthor', 'DC', 'Metropolis', NULL, NULL, 1940, 'Everything', TRUE, TRUE);
 	
 SELECT *
 FROM Superhero;
@@ -93,6 +99,9 @@ INSERT INTO Power
 	
 INSERT INTO Power
 	VALUES('Insanity', 'Vat of Acid');
+	
+INSERT INTO Power
+	VALUES('Super Strength', 'Genetics');
 	
 SELECT *
 FROM Power;
@@ -116,6 +125,15 @@ INSERT INTO HasPower
 INSERT INTO HasPower
 	VALUES('Insanity', 'Harley Quinn');
 	
+INSERT INTO HasPower
+	VALUES('Super Strength', 'Superman');
+	
+INSERT INTO HasPower
+	VALUES('Super Strength', 'Doomsday');
+	
+INSERT INTO HasPower
+	VALUES('Super Strength', 'Hulkling');
+	
 SELECT *
 FROM HasPower;
 	
@@ -125,6 +143,12 @@ INSERT INTO Archenemies
 	
 INSERT INTO Archenemies
 	VALUES('Batman', 'Harley Quinn');
+	
+INSERT INTO Archenemies
+	VALUES('Superman', 'Doomsday');
+	
+INSERT INTO Archenemies
+	VALUES('Superman', 'Lex Luthor');
 	
 SELECT *
 FROM Archenemies;
