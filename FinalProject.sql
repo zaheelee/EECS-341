@@ -62,7 +62,7 @@ INSERT INTO Superhero
 	VALUES('Robin', 'Dick Grayson', 'DC', 'Gotham City', NULL, 'Teen Titans', 1940, 'Everything', TRUE, FALSE);
 	
 INSERT INTO Superhero
-	VALUES('Batman', 'Bruce Wayne', 'DC', 'Gotham City', 'Robin', 'Justice League', 1938, 'Everything', TRUE, FALSE);
+	VALUES('Batman', 'Bruce Wayne', 'DC', 'Gotham City', 'Robin', 'Justice League', 1940, 'Everything', TRUE, FALSE);
 	
 INSERT INTO Superhero
 	VALUES('Iron Man', 'Tony Stark', 'Marvel', NULL, NULL, 'Avengers', 1963, 'Dead Batteries', TRUE, FALSE);
@@ -87,6 +87,12 @@ INSERT INTO Superhero
 	
 INSERT INTO Superhero
 	VALUES('Poison Ivy', 'Dr. Pamela Isley', 'DC', 'Gotham City', NULL, NULL, 1966, 'Fire', TRUE, TRUE);
+	
+INSERT INTO Superhero
+	VALUES('Winter Soldier', 'Bucky Barnes', 'Marvel', NULL, NULL, NULL, 1941, 'Guns', TRUE, FALSE);
+	
+INSERT INTO Superhero
+	VALUES('Captain America', 'Steve Rodgers', 'Marvel', NULL, 'Winter Soldier', 'Avengers', 1941, 'Guns', TRUE, FALSE);
 	
 SELECT *
 FROM Superhero;
@@ -186,3 +192,13 @@ WHERE isEvil = FALSE;
 SELECT name
 FROM Superhero
 WHERE isEvil = TRUE;
+
+--Find the names of all characters on a team based in New York City
+SELECT s.name
+FROM Superhero s, Team t
+WHERE t.city = 'New York City' and s.team_name = t.name;
+
+--Find the names of all Hero-Sidekick or Villain-Sidekick pairs who were created in the same year
+SELECT s1.name, s2.name
+FROM Superhero s1, Superhero s2
+WHERE s1.sidekick = s2.name and s1.origin_year = s2.origin_year;
