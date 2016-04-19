@@ -1,38 +1,34 @@
 #!/usr/bin/ruby
 
-require 'mysql'
+require "rubygems"
+require "mysql2"
 
 class Application
-  attr_accessor :db_connection, :user_table, :message_table
 
   def initialize
-    @db_connection = Mysql.new 'localhost', 'ubuntu'
-    @database = "SuperheroDatabase"
+    @db_connection = Mysql2::Client.new(:host => "localhost", :username => "ubuntu")
     @team_table = "Table"
-      @tt_name = 0
-      @tt_city = 1
-      @tt_universe = 3
     @superhero_table = "Superhero"
-      @st_name = 0
-      @st_secret_identity=1
-      @st_universe=2
-      @st_city=3
-      @st_sidekick=4
-      @st_team_name=5
-      @st_origin_year=6
-      @st_weakeness==7
-      @isALive=8
-      @isEvil=
     @HasPower_relation = "HasPower"
-      @pr_power_name=0
-      @pr_name=1
-    @db_connection.query("USE UserProfiles")
+    @db_connection.query("USE SuperheroDatabase")
   end
 
   def get_secret_identity_from_name(name)
      query="SELECT * FROM " + @superhero_table + " WHERE name=\"" + name + "\";"
+     print query + "\n"
      results = @db_connection.query(query)
-     row = results.fetch_row
-     row[@secret_identity]
+     read_rows("secret_identity", results)
+  end
+
+  def read_rows(attr, results)
+     print "Reading Results: \n"
+     results.each do |row|
+         if !row[attr].nil?
+           print row[attr] + "\n"
+         end
+     end
   end
 end
+
+ app = Application.new
+ app.get_secret_identity_from_name("Iron Man")
