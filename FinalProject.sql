@@ -194,6 +194,32 @@ INSERT INTO Archenemies
 SELECT *
 FROM Archenemies;
 
+
+INSERT INTO Movie
+	VALUES('Iron Man', 2008, 585200000, 'Marvel Studios', 'Jon Favreau', 140000000);
+	
+INSERT INTO Movie
+	VALUES('Iron Man 2', 2010, 623900000, 'Marvel Studios', 'Jon Favreau', 200000000);
+	
+INSERT INTO Movie
+	VALUES('Iron Man 3', 2013, 1215000000, 'Marvel Studios', 'Shane Black', 200000000);
+	
+SELECT *
+FROM Movie;
+
+
+INSERT INTO AppearsIn
+	VALUES('Iron Man', 'Iron Man');
+	
+INSERT INTO AppearsIn
+	VALUES('Iron Man', 'Iron Man 2');
+	
+INSERT INTO AppearsIn
+	VALUES('Iron Man', 'Iron Man 3');
+	
+SELECT *
+FROM AppearsIn;
+
 --Queries
 
 --Find the names of all of the Superheroes
