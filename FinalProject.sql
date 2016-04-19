@@ -204,6 +204,12 @@ INSERT INTO Movie
 INSERT INTO Movie
 	VALUES('Iron Man 3', 2013, 1215000000, 'Marvel Studios', 'Shane Black', 200000000);
 	
+INSERT INTO Movie
+	VALUES('Batman Begins', 2005, 374200000, 'Warner Bros.', 'Christopher Nolan', 150000000);
+	
+INSERT INTO Movie
+	VALUES('Batman & Robin', 1997, 238200000, 'Warner Bros.', 'Joel Schumacher', 140000000);
+
 SELECT *
 FROM Movie;
 
@@ -216,6 +222,15 @@ INSERT INTO AppearsIn
 	
 INSERT INTO AppearsIn
 	VALUES('Iron Man', 'Iron Man 3');
+	
+INSERT INTO AppearsIn
+	VALUES('Batman', 'Batman Begins');
+	
+INSERT INTO AppearsIn
+	VALUES('Batman', 'Batman & Robin');
+	
+INSERT INTO AppearsIn
+	VALUES('Robin', 'Batman & Robin');
 	
 SELECT *
 FROM AppearsIn;
