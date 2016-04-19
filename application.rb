@@ -16,7 +16,7 @@ class Application
   def start
     @on = true
     puts "\nSelect an option:"
-    puts "1. Get secrete identity from name"
+    puts "1. Get secret identity from name"
     puts "quit"
     choice = gets.chomp 
     task_router(choice)
