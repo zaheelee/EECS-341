@@ -1,3 +1,4 @@
+--Build the tables
 CREATE TABLE Team(name VARCHAR(24) NOT NULL,
 					city VARCHAR(24),
 					universe VARCHAR(24),
@@ -31,7 +32,7 @@ CREATE TABLE Archenemies(hero_name VARCHAR(24),
 					FOREIGN KEY(hero_name) REFERENCES Superhero(name),
 					FOREIGN KEY(villain_name) REFERENCES Superhero(name));
 				
-
+--Populate the tables
 INSERT INTO Team
 	VALUES('Justice League', NULL, 'DC');
 
@@ -84,6 +85,9 @@ INSERT INTO Superhero
 INSERT INTO Superhero
 	VALUES('Lex Luthor', 'Lex Luthor', 'DC', 'Metropolis', NULL, NULL, 1940, 'Everything', TRUE, TRUE);
 	
+INSERT INTO Superhero
+	VALUES('Poison Ivy', 'Dr. Pamela Isley', 'DC', 'Gotham City', NULL, NULL, 1966, 'Fire', TRUE, TRUE);
+	
 SELECT *
 FROM Superhero;
 
@@ -102,6 +106,9 @@ INSERT INTO Power
 	
 INSERT INTO Power
 	VALUES('Super Strength', 'Genetics');
+	
+INSERT INTO Power
+	VALUES('Magic', 'Genetics');
 	
 SELECT *
 FROM Power;
@@ -134,6 +141,9 @@ INSERT INTO HasPower
 INSERT INTO HasPower
 	VALUES('Super Strength', 'Hulkling');
 	
+INSERT INTO HasPower
+	VALUES('Magic', 'Wiccan');
+	
 SELECT *
 FROM HasPower;
 	
@@ -145,6 +155,18 @@ INSERT INTO Archenemies
 	VALUES('Batman', 'Harley Quinn');
 	
 INSERT INTO Archenemies
+	VALUES('Batman', 'Poison Ivy');
+	
+INSERT INTO Archenemies
+	VALUES('Robin', 'Joker');
+	
+INSERT INTO Archenemies
+	VALUES('Robin', 'Harley Quinn');
+	
+INSERT INTO Archenemies
+	VALUES('Robin', 'Poison Ivy');
+	
+INSERT INTO Archenemies
 	VALUES('Superman', 'Doomsday');
 	
 INSERT INTO Archenemies
@@ -152,3 +174,15 @@ INSERT INTO Archenemies
 	
 SELECT *
 FROM Archenemies;
+
+--Queries
+
+--Find the names of all of the Superheroes
+SELECT name
+FROM Superhero
+WHERE isEvil = FALSE;
+
+--Find the names of all of the Super Villains
+SELECT name
+FROM Superhero
+WHERE isEvil = TRUE;
