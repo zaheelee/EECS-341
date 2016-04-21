@@ -27,12 +27,12 @@ CREATE TABLE HasPower(power_name VARCHAR(24) NOT NULL,
 				FOREIGN KEY(name) REFERENCES Superhero(name),
 				FOREIGN KEY(power_name) REFERENCES Power(name));
 				
-CREATE TABLE Archenemies(hero_name VARCHAR(24),
+CREATE TABLE Archenemies(hero_name VARCHAR(24) NOT NULL,
 							villain_name VARCHAR(24) NOT NULL,
 					FOREIGN KEY(hero_name) REFERENCES Superhero(name),
 					FOREIGN KEY(villain_name) REFERENCES Superhero(name));
 					
-CREATE TABLE Movie(name VARCHAR(24),
+CREATE TABLE Movie(name VARCHAR(24) NOT NULL,
 					year INTEGER,
 					box_office INTEGER,
 					studio VARCHAR(24),
@@ -40,8 +40,8 @@ CREATE TABLE Movie(name VARCHAR(24),
 					budget INTEGER,
 				PRIMARY KEY(name));
 					
-CREATE TABLE AppearsIn(character_name VARCHAR(24),
-						movie_name VARCHAR(24),
+CREATE TABLE AppearsIn(character_name VARCHAR(24) NOT NULL,
+						movie_name VARCHAR(24) NOT NULL,
 					FOREIGN KEY(character_name) REFERENCES Superhero(name),
 					FOREIGN KEY(movie_name) REFERENCES Movie(name));
 				
